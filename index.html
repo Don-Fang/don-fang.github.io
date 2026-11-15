@@ -17,8 +17,7 @@
       <nav aria-label="Main navigation">
         <a href="#research">Research</a>
         <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#beyond">Beyond research</a>
+        <a href="#education">Background</a>
       </nav>
       <a class="header-contact" href="mailto:donfang@umich.edu">Get in touch <span aria-hidden="true">↗</span></a>
     </div>
@@ -31,7 +30,7 @@
         <h1 id="name">Dayong Fang <span lang="zh-CN">方达庸</span></h1>
         <p class="affiliation">University of Michigan <span aria-hidden="true">/</span> Shanghai Jiao Tong University</p>
         <p class="intro">I am an undergraduate in Computer Engineering, interested in how robots learn to perceive, coordinate, and interact with the physical world.</p>
-        <p class="intro">At SJTU’s ReThinkLab, advised by Prof. Junchi Yan, I work on <strong>visuotactile learning, dexterous manipulation, and world models</strong>. My research also explores collaboration across robots with different bodies and capabilities.</p>
+        <p class="intro">At SJTU’s ReThinkLab, advised by Prof. Junchi Yan, I work on <strong>visuotactile learning, dexterous manipulation, and world models</strong>. I also collaborate on world action models for robotic failure recovery with researchers at Georgia Tech and partner institutions.</p>
         <div class="contact-links" aria-label="Contact links">
           <a href="mailto:donfang@umich.edu">Email <span aria-hidden="true">↗</span></a>
           <a href="https://github.com/Don-Fang" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -46,30 +45,32 @@
 
     <section class="section research-section" id="research" aria-labelledby="research-title">
       <div class="section-heading">
-        <div><p class="eyebrow">01 / Research</p><h2 id="research-title">Selected work</h2></div>
-        <p class="section-note">From human interaction to robot action.</p>
+        <div><p class="eyebrow">01 / Research</p><h2 id="research-title">Selected research</h2></div>
+        <p class="section-note">Perception, action, and recovery.</p>
       </div>
-      <article class="current-research" aria-labelledby="world-model-title">
-        <div class="current-label"><span class="status-dot" aria-hidden="true"></span> Current research <span class="year">2026–present</span></div>
-        <h3 id="world-model-title">Ego-to-Robot World Models for<br class="desktop-break"> Visuotactile Dexterous Manipulation</h3>
-        <p class="role">Researcher · SJTU ReThinkLab · Advisor: Prof. Junchi Yan</p>
-        <p>Learning from egocentric human manipulation videos to build world models for a UR5 arm and Inspire dexterous hand, with visual geometry and hand–object contact as complementary signals.</p>
-        <div class="research-steps">
-          <div><span class="step-number">01</span><h4>Reconstruct interaction</h4><p>Co-developed a pipeline for scene geometry, MANO hand motion, object meshes, and contact-derived pseudo-tactile labels.</p></div>
-          <div><span class="step-number">02</span><h4>Bridge embodiments</h4><p>Retargeted human hand trajectories to Inspire Hand joints, combining human video with target-domain robot data.</p></div>
-          <div><span class="step-number">03</span><h4>Learn dynamics &amp; actions</h4><p>Reproducing and extending DreamerV4-based world modeling with flow-matching action generation.</p></div>
-        </div>
-        <details class="technical-details">
-          <summary>Methods &amp; research direction</summary>
-          <p>The reconstruction pipeline combines VGGT, Any4D, SAM3, HaWoR, and SAM3D Objects. The project targets pick-and-place, insertion, and handwriting; these are research goals. The work is supported by an SJTU-funded project.</p>
-        </details>
+      <article class="paper-feature" id="vtla" aria-labelledby="cogeflow-title">
+        <div class="paper-heading"><p class="eyebrow">01 / Contact &amp; dexterous manipulation</p><span class="submission">Submitted to CVPR 2027</span></div>
+        <h3 id="cogeflow-title">CoGeFlow: Coupled Contact and Geometry Estimation for Dexterous Retargeting</h3>
+        <p class="role">SJTU research collaboration · Monocular video to robot manipulation</p>
+        <p class="paper-summary">Helping robots learn not just how a human hand moves, but where it makes contact. CoGeFlow jointly refines visual contact estimates and object placement, so each can correct errors in the other.</p>
+        <figure class="paper-figure"><a class="image-link" href="assets/images/cogeflow-overview.png" data-lightbox data-caption="CoGeFlow: coupled contact and geometry refinement for robot transfer" aria-label="Enlarge CoGeFlow overview"><img src="assets/images/cogeflow-overview.png" alt="CoGeFlow jointly corrects contact and geometry from human video and transfers the refined interaction to simulated and real robots" width="1488" height="546" loading="lazy"></a><figcaption>Joint perception refinement → contact-guided grasp selection → physics-based trajectory optimization.</figcaption></figure>
+        <div class="paper-bottom"><div><h4>Method</h4><p>A dual-branch conditional flow model exchanges contact and geometry evidence throughout refinement. The resulting interaction references guide open-loop robot execution.</p></div><div><h4>Reported results</h4><p><strong>70.0% simulation SR@7</strong> across 30 tasks, versus 23.3% with coarse inputs. <strong>85.7% hardware trial success</strong> across nine tasks.</p><p class="metric-note">SR@7: a task solved within seven attempts; hardware results use a different trial-success metric.</p></div></div>
+      </article>
+      <article class="paper-feature lucid-paper" id="lucid" aria-labelledby="lucid-title">
+        <div class="paper-heading"><p class="eyebrow">02 / World models &amp; failure recovery</p><span class="submission">Submitted to CVPR 2027</span></div>
+        <h3 id="lucid-title">Lucid: Agent-Guided Imagination for Robotic Manipulation Failure Recovery</h3>
+        <p class="authors">Zhixu Li, Xi Lin, Wenqian Zhang, <strong>Dayong Fang</strong>, Zhenghao Ni, Jiachen Li</p>
+        <p class="role">Collaboration with Georgia Tech and partner institutions · My affiliation: University of Michigan</p>
+        <p class="paper-summary">Recovering when a robot’s plan goes wrong. Lucid-0 uses a reasoning agent to inspect and correct a world action model’s imagined futures, paired with post-training to improve low-level execution.</p>
+        <div class="lucid-flow" aria-label="Lucid method overview"><span>Imagine future trajectories</span><span aria-hidden="true">→</span><span>Reason &amp; correct</span><span aria-hidden="true">→</span><span>Execute &amp; recover</span></div>
+        <div class="paper-bottom"><div><h4>Approach</h4><p>The agent guides imagined trajectories rather than directly controlling actions. Expert demonstrations and agent-guided successful trajectories improve the model’s execution capabilities.</p></div><div><h4>Reported results</h4><p>On LIBERO-Recover, success improves from <strong>54.4% to 68.2%</strong> (69.0% oracle). With Cosmos 3 Edge, success improves from <strong>43.4% to 60.5%</strong>.</p><p class="metric-note">Results from the submitted abstract. Manuscript and project materials forthcoming.</p></div></div>
       </article>
       <article class="work" id="dda" aria-labelledby="dda-title">
         <div class="work-content">
-          <div class="work-topline"><span class="work-index">01</span><span class="work-type">Multi-agent robot learning</span><span class="year">2026</span></div>
+          <div class="work-topline"><span class="work-index">03</span><span class="work-type">Multi-agent robot learning</span><span class="year">2026</span></div>
           <h3 id="dda-title">DDA: Dynamic Dexterity Arena for Benchmarking Multi-Agent Collaboration</h3>
           <p class="role"><strong>Co-first author</strong> · SJTU ReThinkLab</p>
-          <p class="publication-status">Under review · NeurIPS 2026 Datasets and Benchmarks Track</p>
+          <p class="publication-status">Submitted to NeurIPS 2026 · Datasets and Benchmarks Track</p>
           <p>A hierarchical, 3-vs.-3 robot handball benchmark that brings humanoids, quadrupeds, and mobile manipulators into a shared cooperative–competitive setting.</p>
           <ul class="contributions">
             <li>Designed and implemented the end-to-end benchmark in Isaac Gym, including task logic, observation/action spaces, rewards, and evaluation.</li>
@@ -86,27 +87,10 @@
           <figcaption>Benchmark overview · heterogeneous teams, shared strategy, physical execution.</figcaption>
         </figure>
       </article>
-      <article class="work" id="vtla" aria-labelledby="vtla-title">
-        <div class="work-content">
-          <div class="work-topline"><span class="work-index">02</span><span class="work-type">Visual–tactile perception</span></div>
-          <h3 id="vtla-title">VTLA · Hand–Object Contact Estimation</h3>
-          <p class="role">Research contributor</p>
-          <p>Exploring how visual appearance, motion, and reconstructed hand geometry can reveal where and when a hand touches an object.</p>
-          <p>The framework uses persistent queries for 778 MANO hand vertices, combines image and video evidence, and models spatial and temporal interaction to predict contact probabilities and uncertainty.</p>
-          <p class="figure-context">The accompanying method overview connects reconstruction and feature fusion to vertex-level contact prediction.</p>
-          <div class="tags" aria-label="VTLA research topics"><span>Hand–object interaction</span><span>Contact estimation</span><span>Temporal modeling</span></div>
-        </div>
-        <figure class="research-figure">
-          <a class="image-link diagram-link" href="VTLA.jpg" data-lightbox data-caption="VTLA — visual hand–object contact estimation framework" aria-label="Enlarge VTLA method overview">
-            <img src="assets/images/vtla-overview.webp" alt="VTLA method overview: RGB video, appearance and motion features, hand reconstruction, evidence fusion, 778 vertex queries, interaction blocks, and contact prediction heads" width="1774" height="887" loading="lazy" decoding="async">
-            <span class="image-action">View full diagram <span aria-hidden="true">↗</span></span>
-          </a>
-          <figcaption>Method overview · appearance, motion, geometry, and temporal contact.</figcaption>
-        </figure>
-      </article>
+      <details class="ongoing-work"><summary>Ongoing research · Ego-to-Robot World Models</summary><p>At SJTU ReThinkLab, advised by Prof. Junchi Yan, I explore world models for visuotactile dexterous manipulation. My work includes reconstructing human–object interaction, retargeting hand motion, and learning robot dynamics and actions from human video and robot data.</p></details>
       <article class="additional-paper" aria-labelledby="position-title">
         <span class="paper-marker" aria-hidden="true">↳</span>
-        <div><p class="eyebrow">Additional manuscript</p><h3 id="position-title">Breaking the Silo Between Software and Robotic Agents is Essential for General Edge Intelligence</h3><p class="role">Third author · Under review at the NeurIPS 2026 Position Paper Track</p></div>
+        <div><p class="eyebrow">Additional manuscript</p><h3 id="position-title">Breaking the Silo Between Software and Robotic Agents is Essential for General Edge Intelligence</h3><p class="role">Third author · Submitted to the NeurIPS 2026 Position Paper Track</p></div>
       </article>
     </section>
 
@@ -131,30 +115,17 @@
     </section>
 
     <section class="section" id="education" aria-labelledby="education-title">
-      <div class="section-heading"><div><p class="eyebrow">03 / Background</p><h2 id="education-title">Education &amp; recognition</h2></div></div>
+      <div class="section-heading"><div><p class="eyebrow">03 / Background</p><h2 id="education-title">Education &amp; honors</h2></div></div>
       <div class="education-grid">
         <article class="education-item"><p class="eyebrow">2026–present</p><h3>University of Michigan</h3><p>B.S. in Computer Engineering</p><p class="muted">Ann Arbor, Michigan</p></article>
         <article class="education-item"><p class="eyebrow">2024–2026</p><h3>Shanghai Jiao Tong University</h3><p>Electronics and Computer Engineering<br>UM–SJTU Joint Institute</p><p class="muted">Cumulative GPA: 3.72 / 4.00</p></article>
       </div>
-      <div class="honors"><h3>Selected honors</h3><ul><li><span>MCM / ICM</span><strong>Meritorious Winner</strong></li><li><span>University Physics Competition</span><strong>Bronze Medal</strong></li><li><span>China International College Students’ Innovation and Entrepreneurship Competition</span><strong>Provincial Silver Award</strong></li></ul></div>
+      <div class="honors"><h3>Selected honors</h3><ul><li><span>RoboCup China Open · 2025</span><strong>National First Prize</strong></li><li><span>MCM / ICM</span><strong>Meritorious Winner</strong></li><li><span>University Physics Competition</span><strong>Bronze Medal</strong></li><li><span>China International College Students’ Innovation and Entrepreneurship Competition</span><strong>Provincial Silver Award</strong></li></ul></div>
     </section>
 
-    <section class="section beyond-section" id="beyond" aria-labelledby="beyond-title">
-      <div class="section-heading"><div><p class="eyebrow">04 / Beyond research</p><h2 id="beyond-title">Learning &amp; community</h2></div></div>
-      <div class="beyond-grid">
-        <article class="aigc-story">
-          <a class="image-link" href="AIGC%20Class.jpg" data-lightbox data-caption="SJTU AIGC Class opening ceremony" aria-label="Enlarge the AIGC Class photo"><img src="assets/images/aigc-class.webp" alt="Group photo at Shanghai Jiao Tong University’s AIGC Class opening ceremony" width="1080" height="720" loading="lazy" decoding="async"></a>
-          <div><p class="eyebrow">Learning</p><h3>AIGC Class</h3><p>An interest in generative AI, alongside my undergraduate studies. A moment from the SJTU AIGC Class opening ceremony.</p></div>
-        </article>
-        <div class="community-notes">
-          <article><p class="eyebrow">Student service</p><h3>Representing my peers</h3><p>Served as a first-year student representative at the School of Agriculture and Biology’s student union leadership election meeting.</p></article>
-          <article><p class="eyebrow">Outside the lab</p><h3>Football, from another angle</h3><p>Joined the SJTU Football Association, served as fourth official for two matches, and enrolled in referee training.</p></article>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer"><div><a class="footer-name" href="#about">Dayong Fang <span lang="zh-CN">方达庸</span></a><a href="mailto:donfang@umich.edu">donfang@umich.edu <span aria-hidden="true">↗</span></a></div><p>Research, engineering, and a little life along the way.</p><a class="back-top" href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <footer class="site-footer"><div><a class="footer-name" href="#about">Dayong Fang <span lang="zh-CN">方达庸</span></a><a href="mailto:donfang@umich.edu">donfang@umich.edu <span aria-hidden="true">↗</span></a></div><p>Robot learning · Dexterous manipulation · World models</p><a class="back-top" href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>
 
   <dialog class="lightbox" id="image-viewer" aria-labelledby="viewer-title">
     <div class="lightbox-toolbar"><h2 id="viewer-title">Image</h2><button type="button" class="lightbox-close" aria-label="Close image viewer" autofocus>Close <span aria-hidden="true">×</span></button></div>

@@ -249,3 +249,38 @@ h4 { font-size: 1rem; font-weight: 600; margin: 5px 0 8px; }
   a { color: inherit; }
   h2, h3 { break-after: avoid; }
 }
+
+/* Research entries share a consistent title, method, and evidence hierarchy. */
+.paper-feature { padding: 32px; margin: 0 0 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.paper-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.submission { font-size: .75rem; color: var(--accent-dark); background: #eaf0e7; border: 1px solid #d6e0d1; padding: 5px 11px; border-radius: 20px; white-space: nowrap; }
+.paper-feature h3 { font-family: var(--serif); font-size: clamp(1.5rem, 2.7vw, 2rem); line-height: 1.25; font-weight: 500; max-width: 890px; }
+.paper-summary { font-size: 1.05rem; max-width: 900px; margin-top: 20px; }
+.authors { font-size: .875rem; margin-top: 16px; color: var(--muted); }
+.authors strong { color: var(--text); }
+.paper-figure { margin-top: 26px; }
+.paper-figure .image-link { padding: 12px; background: white; border: 1px solid var(--line); border-radius: 4px; display: block; }
+.paper-figure figcaption { margin-top: 10px; }
+.paper-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; padding-top: 20px; margin-top: 24px; border-top: 1px solid var(--line); }
+.paper-bottom h4 { color: var(--accent); font-size: .75rem; text-transform: uppercase; letter-spacing: .09em; margin: 0 0 9px; }
+.paper-bottom p { font-size: .9375rem; }
+.paper-bottom .metric-note { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+.lucid-flow { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px; margin-top: 24px; background: #eff2ed; border-radius: 4px; color: var(--accent-dark); font-size: .875rem; }
+.ongoing-work { border-bottom: 1px solid var(--line); padding: 24px 0; }
+.ongoing-work summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+.ongoing-work p { margin-top: 14px; max-width: 850px; color: var(--muted); }
+.hero { padding-top: 54px; padding-bottom: 48px; }
+@media (max-width: 760px) {
+ .paper-feature { padding: 24px; }
+ .paper-bottom { grid-template-columns: 1fr; gap: 22px; }
+ .lucid-flow { flex-direction: column; gap: 8px; text-align: center; }
+ .lucid-flow [aria-hidden] { transform: rotate(90deg); }
+}
+@media (max-width: 480px) {
+ nav { display: flex; flex-wrap: nowrap; gap: 14px; }
+ html { scroll-padding-top: 120px; }
+ .paper-feature { padding: 20px 16px; }
+ .paper-heading .eyebrow { font-size: .68rem; }
+ .paper-figure .image-link { padding: 3px; }
+ .hero { padding-top: 32px; }
+}
