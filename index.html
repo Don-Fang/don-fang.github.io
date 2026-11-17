@@ -67,27 +67,21 @@
         <div class="paper-bottom"><div><h4>Approach</h4><p><strong>WASD-Zero</strong> renders agent-corrected routes into future frames and pins them into the model’s latent denoising, without retraining. <strong>WASD-Tune</strong> post-trains on guided rollouts, skill data, and demonstrations, then applies task-specific guidance.</p></div><div><h4>Reported results</h4><p>On LIBERO-Recover, WASD-Zero improves OpenWAM from <strong>52.2% to 67.0%</strong> and Cosmos from <strong>42.7% to 61.4%</strong>. WASD-Tune reaches <strong>71.8%</strong>.</p><p class="metric-note">Median token use: 30.2k per episode versus 1.30M for OpenWAM + Harness (about 43× fewer), under the same inference-time budget.</p></div></div>
         <div class="contact-links"><a href="assets/papers/wasd.pdf" target="_blank" rel="noopener noreferrer">Read paper (PDF) <span aria-hidden="true">↗</span></a></div>
       </article>
-      <article class="work" id="dda" aria-labelledby="dda-title">
-        <div class="work-content">
-          <div class="work-topline"><span class="work-index">03</span><span class="work-type">Multi-agent robot learning</span><span class="year">2026</span></div>
-          <h3 id="dda-title">DDA: Dynamic Dexterity Arena for Benchmarking Multi-Agent Collaboration</h3>
-          <p class="role"><strong>Co-first author</strong> · SJTU ReThinkLab</p>
-          <p class="publication-status">Submitted to NeurIPS 2026 · Datasets and Benchmarks Track</p>
-          <p>A hierarchical, 3-vs.-3 robot handball benchmark that brings humanoids, quadrupeds, and mobile manipulators into a shared cooperative–competitive setting.</p>
-          <ul class="contributions">
-            <li>Designed and implemented the end-to-end benchmark in Isaac Gym, including task logic, observation/action spaces, rewards, and evaluation.</li>
-            <li>Estimated dexterous workspaces and trained low-level locomotion, reaching, catching, throwing, and ball-manipulation skills.</li>
-            <li>Developed high-level policies for skill selection, role assignment, and coordination across embodiments.</li>
-          </ul>
-          <div class="tags" aria-label="DDA research topics"><span>Multi-agent RL</span><span>Hierarchical control</span><span>Isaac Gym</span></div>
-        </div>
-        <figure class="research-figure">
-          <a class="image-link diagram-link" href="DDA.jpg" data-lightbox data-caption="DDA — multi-robot handball benchmark overview" aria-label="Enlarge DDA benchmark overview">
+      <article class="paper-feature" id="dda" aria-labelledby="dda-title">
+        <div class="paper-heading"><p class="eyebrow">03 / Multi-agent robot learning</p><span class="submission">Submitted to NeurIPS 2026</span></div>
+        <h3 id="dda-title">DDA: Dynamic Dexterity Arena for Benchmarking Multi-Agent Collaboration</h3>
+        <p class="role"><strong class="author-credit">Co-first author</strong> · SJTU ReThinkLab · Datasets and Benchmarks Track</p>
+        <p class="paper-summary">A hierarchical, 3-vs.-3 robot handball benchmark that brings humanoids, quadrupeds, and mobile manipulators into a shared cooperative–competitive setting.</p>
+        <figure class="paper-figure">
+          <a class="image-link" href="DDA.jpg" data-lightbox data-caption="DDA — multi-robot handball benchmark overview" aria-label="Enlarge DDA benchmark overview">
             <img src="assets/images/dda-overview.webp" alt="DDA framework showing heterogeneous robot teams, high-level strategy, low-level movement and ball skills, and per-embodiment skill profiles" width="1912" height="1042" loading="lazy" decoding="async">
-            <span class="image-action">View full diagram <span aria-hidden="true">↗</span></span>
           </a>
           <figcaption>Benchmark overview · heterogeneous teams, shared strategy, physical execution.</figcaption>
         </figure>
+        <div class="paper-bottom">
+          <div><h4>Method</h4><p>A hierarchical control framework combines low-level locomotion and ball-manipulation skills with high-level skill selection, role assignment, and coordination across robot embodiments.</p><div class="tags" aria-label="DDA research topics"><span>Multi-agent RL</span><span>Hierarchical control</span><span>Isaac Gym</span></div></div>
+          <div><h4>My contributions</h4><ul class="contributions"><li>Designed and implemented the end-to-end benchmark in Isaac Gym, including task logic, observation/action spaces, rewards, and evaluation.</li><li>Estimated dexterous workspaces and trained locomotion, reaching, catching, throwing, and ball-manipulation skills.</li><li>Developed high-level policies for skill selection, role assignment, and coordination.</li></ul></div>
+        </div>
       </article>
       <article class="additional-paper" aria-labelledby="position-title">
         <span class="paper-marker" aria-hidden="true">↳</span>
