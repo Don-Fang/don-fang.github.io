@@ -6,7 +6,7 @@
   <meta name="description" content="Dayong Fang — undergraduate researcher in embodied intelligence, visuotactile learning, dexterous manipulation, and multi-agent robot learning at the University of Michigan and Shanghai Jiao Tong University.">
   <meta name="theme-color" content="#f7f5f0">
   <title>Dayong Fang | Robot Learning &amp; Embodied Intelligence</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261117-awards">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -51,7 +51,7 @@
       <article class="paper-feature" id="vtla" aria-labelledby="cogeflow-title">
         <div class="paper-heading"><p class="eyebrow">01 / Contact &amp; dexterous manipulation</p><span class="submission">Submitted to CVPR 2027</span></div>
         <h3 id="cogeflow-title">CoGeFlow: Coupled Contact and Geometry Estimation for Dexterous Retargeting</h3>
-        <p class="role">SJTU research collaboration · Monocular video to robot manipulation</p>
+        <p class="role"><strong class="author-credit">First author</strong> · SJTU research collaboration · Monocular video to robot manipulation</p>
         <p class="paper-summary">Helping robots learn not just how a human hand moves, but where it makes contact. CoGeFlow jointly refines visual contact estimates and object placement, so each can correct errors in the other.</p>
         <figure class="paper-figure"><a class="image-link" href="assets/images/cogeflow-overview.png" data-lightbox data-caption="CoGeFlow: coupled contact and geometry refinement for robot transfer" aria-label="Enlarge CoGeFlow overview"><img src="assets/images/cogeflow-overview.png" alt="CoGeFlow jointly corrects contact and geometry from human video and transfers the refined interaction to simulated and real robots" width="1488" height="546" loading="lazy"></a><figcaption>Joint perception refinement → contact-guided grasp selection → physics-based trajectory optimization.</figcaption></figure>
         <div class="paper-bottom"><div><h4>Method</h4><p>A dual-branch conditional flow model jointly refines contact on 424 palmar hand vertices and wrist-relative object pose. Both states exchange evidence at every integration step; refined references guide grasp selection and physics-based optimization for open-loop execution.</p></div><div><h4>Reported results</h4><p><strong>70.0% simulation task success</strong> across 30 tasks, versus 23.3% with coarse inputs. <strong>85.7% hardware trial success</strong> (54/63) across nine tasks.</p><p class="metric-note">Simulation: one planning run per task. Hardware: seven independent planning-and-execution trials per task.</p></div></div>
@@ -89,7 +89,6 @@
           <figcaption>Benchmark overview · heterogeneous teams, shared strategy, physical execution.</figcaption>
         </figure>
       </article>
-      <details class="ongoing-work"><summary>Ongoing research · Ego-to-Robot World Models</summary><p>At SJTU ReThinkLab, advised by Prof. Junchi Yan, I explore world models for visuotactile dexterous manipulation. My work includes reconstructing human–object interaction, retargeting hand motion, and learning robot dynamics and actions from human video and robot data.</p></details>
       <article class="additional-paper" aria-labelledby="position-title">
         <span class="paper-marker" aria-hidden="true">↳</span>
         <div><p class="eyebrow">Additional manuscript</p><h3 id="position-title">Breaking the Silo Between Software and Robotic Agents is Essential for General Edge Intelligence</h3><p class="role">Third author · Submitted to the NeurIPS 2026 Position Paper Track</p></div>
@@ -122,7 +121,15 @@
         <article class="education-item"><p class="eyebrow">2026–present</p><h3>University of Michigan</h3><p>B.S. in Computer Engineering</p><p class="muted">Ann Arbor, Michigan</p></article>
         <article class="education-item"><p class="eyebrow">2024–2026</p><h3>Shanghai Jiao Tong University</h3><p>Electronics and Computer Engineering<br>UM–SJTU Joint Institute</p><p class="muted">Cumulative GPA: 3.72 / 4.00</p></article>
       </div>
-      <div class="honors"><h3>Selected honors</h3><ul><li><span>RoboCup China Open · 2025</span><strong>National First Prize</strong></li><li><span>MCM / ICM</span><strong>Meritorious Winner</strong></li><li><span>University Physics Competition</span><strong>Bronze Medal</strong></li><li><span>China International College Students’ Innovation and Entrepreneurship Competition</span><strong>Provincial Silver Award</strong></li></ul></div>
+      <div class="awards" id="honors" aria-labelledby="honors-title">
+        <div class="awards-heading"><p class="eyebrow">Recognition</p><h3 id="honors-title">Selected honors &amp; awards</h3></div>
+        <ul class="award-grid">
+          <li class="award-card award-featured"><p class="eyebrow">Robotics · 2025</p><h4>National First Prize</h4><p class="award-competition">RoboCup China Open</p><p class="award-context">Software Team Leader · SJTU RoboCup Robotics Club</p></li>
+          <li class="award-card"><p class="eyebrow">Mathematical modeling</p><h4>Meritorious Winner</h4><p class="award-competition">MCM / ICM</p></li>
+          <li class="award-card"><p class="eyebrow">Physics</p><h4>Bronze Medal</h4><p class="award-competition">University Physics Competition</p></li>
+          <li class="award-card"><p class="eyebrow">Innovation &amp; entrepreneurship</p><h4>Provincial Silver Award</h4><p class="award-competition">China International College Students’ Innovation and Entrepreneurship Competition</p></li>
+        </ul>
+      </div>
     </section>
 
   </main>
